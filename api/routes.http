@@ -1,0 +1,24 @@
+POST http://localhost:3333/login
+Content-type: application/json
+
+{
+    "nm_login":"",
+    "cd_senha":""
+}
+
+###
+
+GET http://localhost:3333/login?search=
+
+###
+
+PUT http://localhost:3333/login/97da799c-ca2e-4f3b-8657-516085c75866
+Content-type: application/json
+
+{
+    "nm_login":""
+}
+
+###
+
+DELETE http://localhost:3333/login/97da799c-ca2e-4f3b-8657-516085c75866
