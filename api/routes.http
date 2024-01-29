@@ -8,11 +8,11 @@ Content-type: application/json
 
 ###
 
-GET http://localhost:3333/login?search=
+GET http://localhost:3333/login
 
 ###
 
-PUT http://localhost:3333/login/97da799c-ca2e-4f3b-8657-516085c75866
+PUT http://localhost:3333/login/
 Content-type: application/json
 
 {
@@ -21,4 +21,4 @@ Content-type: application/json
 
 ###
 
-DELETE http://localhost:3333/login/97da799c-ca2e-4f3b-8657-516085c75866
+DELETE http://localhost:3333/login/

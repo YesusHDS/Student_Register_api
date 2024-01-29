@@ -1,4 +1,3 @@
-import { log } from 'node:console'
 import {sql} from './db.js'
 import { randomUUID, createHash } from 'node:crypto'
 
@@ -10,7 +9,7 @@ export class loginTablePostgre{
 
     async list(search = '', course = ''){
         let logins = await sql`
-            select l.cd_login, l.nm_login, l.nm_tipo from login l
+            select l.cd_login, l.nm_login, l.nm_tipo from tb_login l
                 where l.nm_tipo = ${'professor'} 
                 and l.nm_login ilike ${'%'+search+'%'}
              
@@ -26,16 +25,16 @@ export class loginTablePostgre{
 
         const hashSenha = createHash('sha256').update(cd_senha).digest('hex')
 
-        await sql`insert into login (cd_login, cd_senha, nm_login, nm_tipo) values (${id}, ${hashSenha}, ${nm_login}, 'professor');`
+        await sql`insert into tb_login (cd_login, cd_senha, nm_login, nm_tipo) values (${id}, ${hashSenha}, ${nm_login}, 'professor');`
     }
 
     async update(id, login){
         const {nm_login, cd_senha} = login
 
-        await sql`update login set nm_login = ${nm_login} where cd_login = ${id}`
+        await sql`update tb_login set nm_login = ${nm_login} where cd_login = ${id}`
     }
 
     async delete(id){
-        await sql`delete from login where cd_login = ${id}`
+        await sql`delete from tb_login where cd_login = ${id}`
     }
 }
