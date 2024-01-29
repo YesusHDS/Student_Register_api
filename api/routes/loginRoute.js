@@ -5,7 +5,8 @@ import { loginTablePostgre } from '../database/loginTablePostgre.js'
 const login = new loginTablePostgre()
 
 export const loginRoute = async (server)=>{
-    server.post('/login',async (req, rep)=>{
+
+    server.post('/create',async (req, rep)=>{
 
         const {nm_login, cd_senha} = req.body
     
@@ -16,8 +17,29 @@ export const loginRoute = async (server)=>{
     
         return rep.status(201).send()
     })
+
+    server.post('/login', async(req, rep)=>{
+        const {nm_login, cd_senha} = req.body
+
+
+        const log = await login.login({
+            nm_login,
+            cd_senha
+        })
+
+        return rep.header('token', log.length>0?log[0].cd_token:'').send(req.body)
+    })
+
+    server.get('/sessionCheck', async(req, rep)=>{
+        const {token} = req.headers
+
+        const check = login.check(token)
+
+        return check
+    })
+
     
-    server.get('/login',async (req, rep)=>{
+    server.get('/loginList',async (req)=>{
     
         const search = req.query.search
     

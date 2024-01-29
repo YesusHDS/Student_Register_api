@@ -1,0 +1,23 @@
+POST http://localhost:3333/curso
+Content-Type: application/json
+
+{
+    "nm_curso": "teste"
+}
+
+###
+
+GET http://localhost:3333/curso
+
+###
+
+PUT http://localhost:3333/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
+Content-Type: application/json
+
+{
+    "nm_curso": "teste2"
+}
+
+###
+
+DELETE http://localhost:3333/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
