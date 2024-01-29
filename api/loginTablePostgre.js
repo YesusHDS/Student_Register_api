@@ -1,5 +1,6 @@
+import { log } from 'node:console'
 import {sql} from './db.js'
-import { randomUUID } from 'node:crypto'
+import { randomUUID, createHash } from 'node:crypto'
 
 // select * from login l left join login_curso lc on lc.cd_login = l.cd_login
 // join cursos c on lc.cd_curso = c.cd_curso;
@@ -23,7 +24,9 @@ export class loginTablePostgre{
 
         const {nm_login, cd_senha} = login
 
-        await sql`insert into login (cd_login, cd_senha, nm_login, nm_tipo) values (${id}, ${cd_senha}, ${nm_login}, 'professor');`
+        const hashSenha = createHash('sha256').update(cd_senha).digest('hex')
+
+        await sql`insert into login (cd_login, cd_senha, nm_login, nm_tipo) values (${id}, ${hashSenha}, ${nm_login}, 'professor');`
     }
 
     async update(id, login){
