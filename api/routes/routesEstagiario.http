@@ -1,0 +1,32 @@
+POST http://localhost:3333/estagiario
+Content-Type: application/json
+
+{
+    "cd_curso": "c7a35b3f-5b9f-48e9-aaab-e7430aee30d3", 
+    "cd_registroMatricula": "a", 
+    "dt_periodoComeco": "12/13/2023", 
+    "dt_periodoTermino": "12/13/2023", 
+    "nm_empresa": "Empresa", 
+    "nm_estagiario": "va"
+}
+
+###
+
+GET http://localhost:3333/estagiario?search=&empresa=&RA=&curso=
+
+###
+
+PUT http://localhost:3333/estagiario/adasdasdasda12312312312
+Content-Type: application/json
+
+{
+    "cd_curso": "c7a35b3f-5b9f-48e9-aaab-e7430aee30d3", 
+    "dt_periodoComeco": "12/13/2023", 
+    "dt_periodoTermino": "12/13/2023", 
+    "nm_empresa": "FREAK", 
+    "nm_estagiario": "FREAAAAAAAAAK"
+}
+
+###
+
+DELETE http://localhost:3333/estagiario/a

@@ -10,7 +10,7 @@ sql`
         nm_tipo varchar(10) not null,
         constraint pk_login primary key(cd_login),
         constraint fk_curso_login foreign key(cd_curso)
-            references tb_cursos(cd_curso)
+            references tb_cursos(cd_curso) on delete cascade
     );
 `.then(()=>{
     console.log("Tabela criada!");

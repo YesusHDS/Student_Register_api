@@ -2,8 +2,9 @@ POST http://localhost:3333/create
 Content-type: application/json
 
 {
-    "nm_login":"Work",
-    "cd_senha":"123"
+    "nm_login":"O Diretor",
+    "cd_senha":"123",
+    "cd_curso": "da620a3b-f2e7-4139-9d20-b3ebd9d3966f"
 }
 
 ###
@@ -12,18 +13,18 @@ POST http://localhost:3333/login
 Content-type: application/json
 
 {
-    "nm_login": "work",
+    "nm_login": "O Diretor",
     "cd_senha": "123"
 }
 
 ###
 
 GET http://localhost:3333/sessionCheck
-token: 19077957-44c4-4824-80ad-d9a6509345e5
+token: a9ebb5f9-d1be-404c-818f-b51e97e67b19
 
 ###
 
-GET http://localhost:3333/loginList
+GET http://localhost:3333/loginList?search=&curso=
 
 ###
 

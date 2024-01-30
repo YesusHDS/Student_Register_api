@@ -2,12 +2,12 @@ POST http://localhost:3333/curso
 Content-Type: application/json
 
 {
-    "nm_curso": "teste"
+    "nm_curso": "DIRETORIA"
 }
 
 ###
 
-GET http://localhost:3333/curso
+GET http://localhost:3333/curso?search=
 
 ###
 

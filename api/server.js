@@ -11,8 +11,6 @@
 import {fastify} from 'fastify'
 import {routes} from './routes/routes.js'
 
-
-
 const server = fastify()
 
 routes(server)

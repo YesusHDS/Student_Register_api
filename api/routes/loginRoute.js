@@ -8,11 +8,12 @@ export const loginRoute = async (server)=>{
 
     server.post('/create',async (req, rep)=>{
 
-        const {nm_login, cd_senha} = req.body
+        const {nm_login, cd_senha,cd_curso} = req.body
     
         await login.create({
             nm_login,
-            cd_senha
+            cd_senha,
+            cd_curso
         })
     
         return rep.status(201).send()
@@ -41,9 +42,9 @@ export const loginRoute = async (server)=>{
     
     server.get('/loginList',async (req)=>{
     
-        const search = req.query.search
+        const {search, curso} = req.query
     
-        const logins = await login.list(search)
+        const logins = await login.list(search, curso)
     
         return logins
     })

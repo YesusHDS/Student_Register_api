@@ -27,20 +27,25 @@ export class loginTablePostgre{
     async check(token){
 
         let log = await sql`
-            select cd_login, nm_login, nm_tipo from tb_login where cd_token = ${token}
+            select l.cd_login, l.nm_login, l.nm_tipo, c.cd_curso, c.nm_curso from tb_login l left join tb_cursos c
+                on l.cd_curso = c.cd_curso
+                where cd_token = ${token}
         `
 
         return log
-        
+
     }
 
-    async list(search = '', course = ''){
-        let logins = await sql`
-            select l.cd_login, l.nm_login, l.nm_tipo from tb_login l
-                where l.nm_tipo = ${'professor'} 
-                and l.nm_login ilike ${'%'+search+'%'}
-             
-        `
+    async list(search = '', curso){
+
+        let logins
+
+        logins = await sql`
+            select l.cd_login, l.nm_login, l.nm_tipo, c.cd_curso, c.nm_curso from tb_login l left join tb_cursos c
+                on l.cd_curso = c.cd_curso
+                where l.nm_login ilike ${'%'+search+'%'}
+                and (l.cd_curso ilike ${'%'+curso+'%'})
+            `
 
         return logins
     }
@@ -48,11 +53,14 @@ export class loginTablePostgre{
     async create(login){
         const id = randomUUID()
 
-        const {nm_login, cd_senha} = login
+        const {nm_login, cd_senha, cd_curso} = login
 
         const hashSenha = createHash('sha256').update(cd_senha).digest('hex')
 
-        await sql`insert into tb_login (cd_login, cd_senha, nm_login, nm_tipo) values (${id}, ${hashSenha}, ${nm_login}, 'professor')`
+        await sql`
+            insert into tb_login (cd_login, cd_senha, nm_login, nm_tipo, cd_curso) 
+            values (${id}, ${hashSenha}, ${nm_login}, 'professor', ${cd_curso.length>0?cd_curso:null})
+        `
     }
 
     async update(id, login){
