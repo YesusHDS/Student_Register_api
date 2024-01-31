@@ -1,34 +1,34 @@
-POST http://localhost:3333/create
+POST https://student-register-bnaf.onrender.com/create
 Content-type: application/json
 
 {
-    "nm_login":"O Diretor",
-    "cd_senha":"123",
-    "cd_curso": "da620a3b-f2e7-4139-9d20-b3ebd9d3966f"
+    "nm_login":"bru",
+    "cd_senha":"asd",
+    "cd_curso": "858cfd10-16fa-45a0-b23b-59534450f7e2"
 }
 
 ###
 
-POST http://localhost:3333/login
+POST https://student-register-bnaf.onrender.com/login
 Content-type: application/json
 
 {
-    "nm_login": "O Diretor",
-    "cd_senha": "123"
+    "nm_login": "",
+    "cd_senha": ""
 }
 
 ###
 
-GET http://localhost:3333/sessionCheck
+GET https://student-register-bnaf.onrender.com/sessionCheck
 token: a9ebb5f9-d1be-404c-818f-b51e97e67b19
 
 ###
 
-GET http://localhost:3333/loginList?search=&curso=
+GET https://student-register-bnaf.onrender.com/loginList?search=&curso=
 
 ###
 
-PUT http://localhost:3333/login/
+PUT https://student-register-bnaf.onrender.com/login/
 Content-type: application/json
 
 {
@@ -37,4 +37,4 @@ Content-type: application/json
 
 ###
 
-DELETE http://localhost:3333/login/
+DELETE https://student-register-bnaf.onrender.com/login/

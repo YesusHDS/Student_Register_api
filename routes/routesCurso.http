@@ -1,23 +1,23 @@
-POST http://localhost:3333/curso
+POST https://student-register-bnaf.onrender.com/curso
 Content-Type: application/json
 
 {
-    "nm_curso": "DIRETORIA"
+    "nm_curso": ""
 }
 
 ###
 
-GET http://localhost:3333/curso?search=
+GET https://student-register-bnaf.onrender.com/curso?search=
 
 ###
 
-PUT http://localhost:3333/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
+PUT https://student-register-bnaf.onrender.com/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
 Content-Type: application/json
 
 {
-    "nm_curso": "teste2"
+    "nm_curso": ""
 }
 
 ###
 
-DELETE http://localhost:3333/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
+DELETE https://student-register-bnaf.onrender.com/curso/858cfd10-16fa-45a0-b23b-59534450f7e2
