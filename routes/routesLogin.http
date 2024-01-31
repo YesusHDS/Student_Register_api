@@ -2,9 +2,9 @@ POST https://student-register-bnaf.onrender.com/create
 Content-type: application/json
 
 {
-    "nm_login":"bru",
-    "cd_senha":"asd",
-    "cd_curso": "858cfd10-16fa-45a0-b23b-59534450f7e2"
+    "nm_login":"Amor da minha vida",
+    "cd_senha":"123",
+    "cd_curso": "da620a3b-f2e7-4139-9d20-b3ebd9d3966f"
 }
 
 ###
@@ -13,7 +13,7 @@ POST https://student-register-bnaf.onrender.com/login
 Content-type: application/json
 
 {
-    "nm_login": "",
+    "nm_login": "Amor da minha vida",
     "cd_senha": ""
 }
 
