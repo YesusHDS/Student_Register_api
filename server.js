@@ -10,10 +10,25 @@
 
 import {fastify} from 'fastify'
 import {routes} from './routes/routes.js'
+import {fastifyCors} from '@fastify/cors'
 
 const server = fastify()
 
+server.register(fastifyCors,{
+    origin:'*',
+    allowedHeaders:[
+        "Origin",
+        "X-Requested-With",
+        "Accept",
+        "Content-Type",
+        "Authorization",
+    ],
+    methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
+})
+
 routes(server)
+
+
 
 server.listen({
     host: '0.0.0.0',
