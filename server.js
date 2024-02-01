@@ -22,15 +22,12 @@ server.register(fastifyCors,{
         "Accept",
         "Content-Type",
         "Authorization",
-        "token",
-        "Token",
     ],
+    exposedHeaders: 'token',
     methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 })
 
 routes(server)
-
-
 
 server.listen({
     host: '0.0.0.0',
