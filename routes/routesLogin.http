@@ -14,7 +14,7 @@ Content-type: application/json
 
 {
     "nm_login": "Amor da minha vida",
-    "cd_senha": ""
+    "cd_senha": "123"
 }
 
 ###

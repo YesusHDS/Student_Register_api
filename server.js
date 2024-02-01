@@ -23,6 +23,7 @@ server.register(fastifyCors,{
         "Content-Type",
         "Authorization",
         "token",
+        "Token",
     ],
     methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 })
