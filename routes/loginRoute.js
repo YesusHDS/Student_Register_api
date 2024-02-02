@@ -32,7 +32,7 @@ export const loginRoute = async (server)=>{
     })
 
     server.get('/sessionCheck', async(req, rep)=>{
-        const {token} = req.headers
+        const {token} = req.body
 
         const check = login.check(token)
 

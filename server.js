@@ -24,7 +24,6 @@ server.register(fastifyCors,{
         "Authorization",
     ],
     exposedHeaders: 'token',
-    preflight: false,
     methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 })
 
