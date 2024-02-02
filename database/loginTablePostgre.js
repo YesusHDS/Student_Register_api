@@ -17,7 +17,9 @@ export class loginTablePostgre{
         `
 
         let log = await sql`
-            select cd_login, nm_login, nm_tipo, cd_token from tb_login where cd_token = ${token}
+            select l.cd_login, l.nm_login, l.nm_tipo, c.cd_curso, c.nm_curso, c.cd_token from tb_login l left join tb_cursos c
+            on l.cd_curso = c.cd_curso
+            where cd_token = ${token}
         `
 
         return log
@@ -27,7 +29,7 @@ export class loginTablePostgre{
     async check(token){
 
         let log = await sql`
-            select l.cd_login, l.nm_login, l.nm_tipo, c.cd_curso, c.nm_curso from tb_login l left join tb_cursos c
+            select l.cd_login, l.nm_login, l.nm_tipo, c.cd_curso, c.nm_curso, c.cd_token from tb_login l left join tb_cursos c
                 on l.cd_curso = c.cd_curso
                 where cd_token = ${token}
         `

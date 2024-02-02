@@ -20,9 +20,10 @@ Content-type: application/json
 ###
 
 POST https://student-register-bnaf.onrender.com/sessionCheck
+Content-Type: application/json
 
 {
-    "token": "a9ebb5f9-d1be-404c-818f-b51e97e67b19"
+    "token": "b83a361e-6897-4c02-bedf-3b2a395d7484"
 }
 
 ###
