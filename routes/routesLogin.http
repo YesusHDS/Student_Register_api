@@ -19,8 +19,11 @@ Content-type: application/json
 
 ###
 
-GET https://student-register-bnaf.onrender.com/sessionCheck
-token: a9ebb5f9-d1be-404c-818f-b51e97e67b19
+POST https://student-register-bnaf.onrender.com/sessionCheck
+
+{
+    "token": "a9ebb5f9-d1be-404c-818f-b51e97e67b19"
+}
 
 ###
 

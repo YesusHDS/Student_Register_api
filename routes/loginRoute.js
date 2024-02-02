@@ -31,7 +31,7 @@ export const loginRoute = async (server)=>{
         return rep.header('token', log.length>0?log[0].cd_token:'').send(req.body)
     })
 
-    server.get('/sessionCheck', async(req, rep)=>{
+    server.post('/sessionCheck', async(req, rep)=>{
         const {token} = req.body
 
         const check = login.check(token)
