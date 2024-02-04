@@ -2,9 +2,9 @@ POST https://student-register-bnaf.onrender.com/create
 Content-type: application/json
 
 {
-    "nm_login":"Amor da minha vida",
-    "cd_senha":"123",
-    "cd_curso": "da620a3b-f2e7-4139-9d20-b3ebd9d3966f"
+    "nm_login":"",
+    "cd_senha":"",
+    "cd_curso": ""
 }
 
 ###
@@ -13,8 +13,8 @@ POST https://student-register-bnaf.onrender.com/login
 Content-type: application/json
 
 {
-    "nm_login": "Amor da minha vida",
-    "cd_senha": "123"
+    "nm_login": "",
+    "cd_senha": ""
 }
 
 ###
@@ -23,12 +23,21 @@ POST https://student-register-bnaf.onrender.com/sessionCheck
 Content-Type: application/json
 
 {
-    "token": "b83a361e-6897-4c02-bedf-3b2a395d7484"
+    "token": ""
 }
 
 ###
 
 GET https://student-register-bnaf.onrender.com/loginList?search=&curso=
+
+###
+
+PUT https://student-register-bnaf.onrender.com/logoff/
+Content-type: application/json
+
+{
+    "token":""
+}
 
 ###
 

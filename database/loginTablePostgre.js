@@ -26,6 +26,11 @@ export class loginTablePostgre{
             
     }
 
+    async logoff(token){
+
+        await sql`update tb_login set cd_token = null where cd_token = ${token}`
+    }
+
     async check(token){
 
         let log = await sql`
