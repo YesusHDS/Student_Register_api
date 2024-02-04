@@ -33,11 +33,6 @@ GET https://student-register-bnaf.onrender.com/loginList?search=&curso=
 ###
 
 PUT https://student-register-bnaf.onrender.com/logoff/
-Content-type: application/json
-
-{
-    "token":""
-}
 
 ###
 
