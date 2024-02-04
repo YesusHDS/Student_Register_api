@@ -49,12 +49,12 @@ export const loginRoute = async (server)=>{
         return logins
     })
 
-    server.put('/logoff', async(req, rep)=>{
-        const {token} = req.body
+    server.put('/logoff/:token', async(req, rep)=>{
+        const token = req.params.token
 
 
         await login.logoff({
-            cd_token: token
+            token
         })
 
         return rep.status(204).send()
