@@ -32,7 +32,7 @@ GET https://student-register-bnaf.onrender.com/loginList?search=&curso=
 
 ###
 
-PUT https://student-register-bnaf.onrender.com/logoff/
+PUT https://student-register-bnaf.onrender.com/logoff/e2f18d16-9d60-47b1-a7d9-10169717bba4
 
 ###
 

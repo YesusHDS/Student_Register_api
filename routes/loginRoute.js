@@ -57,7 +57,7 @@ export const loginRoute = async (server)=>{
             token
         })
 
-        return rep.status(204).send()
+        return token
     })
     
     server.put('/login/:id', async (req, rep)=>{
