@@ -14,18 +14,18 @@ import {fastifyCors} from '@fastify/cors'
 
 const server = fastify()
 
-server.register(fastifyCors,{
-    origin:'*',
-    allowedHeaders:[
-        "Origin",
-        "X-Requested-With",
-        "Accept",
-        "Content-Type",
-        "Authorization",
-    ],
-    exposedHeaders: 'token',
-    methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
-})
+// server.register(fastifyCors,{
+//     origin:'*',
+//     allowedHeaders:[
+//         "Origin",
+//         "X-Requested-With",
+//         "Accept",
+//         "Content-Type",
+//         "Authorization",
+//     ],
+//     exposedHeaders: 'token',
+//     methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
+// })
 
 routes(server)
 

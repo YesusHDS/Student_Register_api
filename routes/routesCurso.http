@@ -1,4 +1,4 @@
-POST https://student-register-bnaf.onrender.com/curso
+POST http://localhost:3333/curso
 Content-Type: application/json
 
 {
@@ -7,11 +7,11 @@ Content-Type: application/json
 
 ###
 
-GET https://student-register-bnaf.onrender.com/curso?search=
+GET http://localhost:3333/curso?search=
 
 ###
 
-PUT https://student-register-bnaf.onrender.com/curso/300f1b28-a6ef-42a6-acf9-bea7dcabe3b6
+PUT http://localhost:3333/curso/
 Content-Type: application/json
 
 {
@@ -20,4 +20,4 @@ Content-Type: application/json
 
 ###
 
-DELETE https://student-register-bnaf.onrender.com/curso/858cfd10-16fa-45a0-b23b-59534450f7e2
+DELETE http://localhost:3333/curso/

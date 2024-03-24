@@ -1,4 +1,4 @@
-POST https://student-register-bnaf.onrender.com/create
+POST http://localhost:3333/create
 Content-type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-type: application/json
 
 ###
 
-POST https://student-register-bnaf.onrender.com/login
+POST http://localhost:3333/login
 Content-type: application/json
 
 {
@@ -19,7 +19,7 @@ Content-type: application/json
 
 ###
 
-POST https://student-register-bnaf.onrender.com/sessionCheck
+POST http://localhost:3333/sessionCheck
 Content-Type: application/json
 
 {
@@ -28,15 +28,15 @@ Content-Type: application/json
 
 ###
 
-GET https://student-register-bnaf.onrender.com/loginList?search=&curso=
+GET http://localhost:3333/loginList?search=&curso=
 
 ###
 
-PUT https://student-register-bnaf.onrender.com/logoff/e2f18d16-9d60-47b1-a7d9-10169717bba4
+PUT http://localhost:3333/logoff/
 
 ###
 
-PUT https://student-register-bnaf.onrender.com/login/
+PUT http://localhost:3333/login/
 Content-type: application/json
 
 {
@@ -45,4 +45,4 @@ Content-type: application/json
 
 ###
 
-DELETE https://student-register-bnaf.onrender.com/login/
+DELETE http://localhost:3333/login/

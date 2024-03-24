@@ -4,6 +4,7 @@ sql`
     create table tb_cursos(
         cd_curso text,
         nm_curso varchar(45) not null,
+        nm_cicloEstagio varchar(10) not null,
         constraint pk_cursos primary key(cd_curso)
     );
 `.then(()=>{

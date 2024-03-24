@@ -1,4 +1,4 @@
-POST https://student-register-bnaf.onrender.com/estagiario
+POST http://localhost:3333/estagiario
 Content-Type: application/json
 
 {
@@ -12,11 +12,11 @@ Content-Type: application/json
 
 ###
 
-GET https://student-register-bnaf.onrender.com/estagiario?search=&empresa=&RA=&curso=
+GET http://localhost:3333/estagiario?search=&empresa=&RA=&curso=
 
 ###
 
-PUT https://student-register-bnaf.onrender.com/estagiario/adasdasdasda12312312312
+PUT http://localhost:3333/estagiario/
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 
 ###
 
-DELETE https://student-register-bnaf.onrender.com/estagiario/a
+DELETE http://localhost:3333/estagiario/
