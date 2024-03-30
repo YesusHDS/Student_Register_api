@@ -13,18 +13,19 @@ export class cursosTablePostgre{
     async create(curso){
         const id = randomUUID()
 
-        const {nm_curso} = curso
+        const {nm_curso, nm_cicloEstagio} = curso
 
         await sql`
-            insert into tb_cursos (cd_curso, nm_curso) values (${id}, ${nm_curso})
+            insert into tb_cursos (cd_curso, nm_curso) values (${id}, ${nm_curso}, ${nm_cicloEstagio})
         `
     }
 
     async update(id, curso){
-        const {nm_curso} = curso
+        const {nm_curso, nm_cicloEstagio} = curso
 
         await sql`
-            update tb_cursos set nm_curso = ${nm_curso} where cd_curso = ${id}
+            update tb_cursos 
+                set nm_curso = ${nm_curso}, nm_cicloEstagio = ${nm_cicloEstagio} where cd_curso = ${id}
         `
     }
 
