@@ -14,6 +14,7 @@ sql`
         cd_empresa text,
         dt_periodoComeco date not null,
         dt_periodoTermino date not null,
+        ic_check boolean,
         constraint pk_estagiario primary key(cd_registroMatricula),
         constraint fk_curso_estagiario foreign key(cd_curso)
             references tb_cursos on delete cascade,
