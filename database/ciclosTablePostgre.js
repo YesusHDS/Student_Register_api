@@ -2,9 +2,10 @@ import {sql} from './db.js'
 import {randomUUID} from 'node:crypto'
 
 export class ciclosTablePostgre{
-    async list(search=''){
+    async list({search='', cd_curso=''}){
         let ciclos = await sql`
             select cd_ciclo, cd_curso, nm_ciclo from tb_ciclos where nm_ciclo ilike ${'%'+search+'%'}
+                and cd_curso ilike ${'%'+cd_curso+'%'}
         `
 
         return ciclos
