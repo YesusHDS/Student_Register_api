@@ -8,6 +8,14 @@ export const estagiariosRoute = async(server)=>{
         const {
             cd_curso, 
             cd_registroMatricula, 
+            nm_statusMatricula,
+            nm_turno,
+            nm_ciclo,
+            dt_inicioEstagio,
+            qt_horaEstagioEntrada,
+            qt_horasEstagio,
+            cd_empresa,
+            ic_check,
             dt_periodoComeco, 
             dt_periodoTermino, 
             nm_empresa, 
@@ -17,6 +25,14 @@ export const estagiariosRoute = async(server)=>{
         await estagiario.create({
             cd_curso, 
             cd_registroMatricula, 
+            nm_statusMatricula,
+            nm_turno,
+            nm_ciclo,
+            dt_inicioEstagio,
+            qt_horaEstagioEntrada,
+            qt_horasEstagio,
+            cd_empresa,
+            ic_check,
             dt_periodoComeco, 
             dt_periodoTermino, 
             nm_empresa, 
@@ -28,9 +44,9 @@ export const estagiariosRoute = async(server)=>{
 
     server.get('/estagiario',async (req)=>{
     
-        const {search, empresa, RA, curso} = req.query
+        const {search, empresa, RA, curso, statusMatricula, check} = req.query
     
-        const estagiarios = await estagiario.list(search, empresa, RA, curso)
+        const estagiarios = await estagiario.list(search, empresa, RA, curso, statusMatricula, check)
     
         return estagiarios
     })
@@ -42,13 +58,29 @@ export const estagiariosRoute = async(server)=>{
             cd_curso, 
             dt_periodoComeco, 
             dt_periodoTermino, 
-            nm_empresa, nm_estagiario} = req.body
+            cd_empresa, 
+            nm_estagiario,
+            nm_statusMatricula,
+            nm_turno,
+            nm_ciclo,
+            dt_inicioEstagio,
+            qt_horaEstagioEntrada,
+            qt_horasEstagio,
+            ic_check} = req.body
     
         await estagiario.update(id, {
             cd_curso, 
             dt_periodoComeco, 
             dt_periodoTermino, 
-            nm_empresa, nm_estagiario
+            cd_empresa, 
+            nm_estagiario,
+            nm_statusMatricula,
+            nm_turno,
+            nm_ciclo,
+            dt_inicioEstagio,
+            qt_horaEstagioEntrada,
+            qt_horasEstagio,
+            ic_check
         })
     
         return rep.status(204).send()
