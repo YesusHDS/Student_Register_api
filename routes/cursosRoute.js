@@ -5,10 +5,11 @@ const curso = new cursosTablePostgre()
 export const cursosRoute = async(server)=>{
 
     server.post('/curso', async(req,rep)=>{
-        const {nm_curso} = req.body
+        const {nm_curso, nm_cicloEstagio} = req.body
 
         await curso.create({
-            nm_curso
+            nm_curso,
+            nm_cicloEstagio
         })
 
         return rep.status(201).send()
@@ -26,10 +27,11 @@ export const cursosRoute = async(server)=>{
     server.put('/curso/:id', async (req, rep)=>{
         const id = req.params.id
     
-        const {nm_curso} = req.body
+        const {nm_curso, nm_cicloEstagio} = req.body
     
         await curso.update(id, {
             nm_curso,
+            nm_cicloEstagio
         })
     
         return rep.status(204).send()
