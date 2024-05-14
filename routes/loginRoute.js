@@ -53,9 +53,7 @@ export const loginRoute = async (server)=>{
         const token = req.params.token
 
 
-        await login.logoff({
-            token
-        })
+        await login.logoff(token)
 
         return token
     })
