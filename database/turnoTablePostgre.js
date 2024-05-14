@@ -2,9 +2,10 @@ import {sql} from './db.js'
 import {randomUUID} from 'node:crypto'
 
 export class turnoTablePostgre{
-    async list(search=''){
+    async list({search='', cd_curso=''}){
         let turnos = await sql`
             select cd_turno, cd_curso, nm_turno from tb_turnos where nm_turno ilike ${'%'+search+'%'}
+                and cd_curso ilike ${'%'+cd_curso+'%'}
         `
 
         return turnos
