@@ -2,7 +2,8 @@ POST http://localhost:3333/curso
 Content-Type: application/json
 
 {
-    "nm_curso": ""
+    "nm_curso": "",
+    "nm_cicloEstagio": ""
 }
 
 ###
@@ -15,7 +16,8 @@ PUT http://localhost:3333/curso/
 Content-Type: application/json
 
 {
-    "nm_curso": ""
+    "nm_curso": "",
+    "nm_cicloEstagio": ""
 }
 
 ###

@@ -4,7 +4,7 @@ import {randomUUID} from 'node:crypto'
 export class cursosTablePostgre{
     async list(search=''){
         let cursos = await sql`
-            select cd_curso, nm_curso from tb_cursos where nm_curso ilike ${'%'+search+'%'}
+            select cd_curso, nm_curso, nm_cicloEstagio from tb_cursos where nm_curso ilike ${'%'+search+'%'}
         `
 
         return cursos
@@ -16,7 +16,7 @@ export class cursosTablePostgre{
         const {nm_curso, nm_cicloEstagio} = curso
 
         await sql`
-            insert into tb_cursos (cd_curso, nm_curso) values (${id}, ${nm_curso}, ${nm_cicloEstagio})
+            insert into tb_cursos (cd_curso, nm_curso, nm_cicloEstagio) values (${id}, ${nm_curso}, ${nm_cicloEstagio})
         `
     }
 

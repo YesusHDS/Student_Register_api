@@ -12,5 +12,4 @@ export const routes = async (server)=>{
     server.register(ciclosRoute)
     server.register(turnosRoute)
     server.register(empresasRoute)
-
 }
