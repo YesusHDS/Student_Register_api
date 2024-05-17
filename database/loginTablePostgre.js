@@ -70,10 +70,10 @@ export class loginTablePostgre{
         `
     }
 
-    async update(id, login){
+    async update(token, login){
         const {nm_login} = login
 
-        await sql`update tb_login set nm_login = ${nm_login} where cd_login = ${id}`
+        await sql`update tb_login set nm_login = ${nm_login} where cd_token = ${token}`
     }
 
     async delete(id){

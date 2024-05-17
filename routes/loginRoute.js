@@ -58,12 +58,12 @@ export const loginRoute = async (server)=>{
         return token
     })
     
-    server.put('/login/:id', async (req, rep)=>{
-        const id = req.params.id
+    server.put('/login/:token', async (req, rep)=>{
+        const token = req.params.token
     
         const {nm_login} = req.body
     
-        await login.update(id, {
+        await login.update(token, {
             nm_login,
         })
     

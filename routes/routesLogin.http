@@ -2,9 +2,9 @@ POST http://localhost:3333/create
 Content-type: application/json
 
 {
-    "nm_login":"",
-    "cd_senha":"",
-    "cd_curso": ""
+    "nm_login":"Teste2",
+    "cd_senha":"123",
+    "cd_curso": "6fed0262-4b27-42d9-988f-1a1a5c80570d"
 }
 
 ###
@@ -13,8 +13,8 @@ POST http://localhost:3333/login
 Content-type: application/json
 
 {
-    "nm_login": "",
-    "cd_senha": ""
+    "nm_login": "Teste",
+    "cd_senha": "123"
 }
 
 ###
@@ -23,7 +23,7 @@ POST http://localhost:3333/sessionCheck
 Content-Type: application/json
 
 {
-    "token": ""
+    "token": "aee1f7fc-e8dc-4dab-a939-85ae64f002b9"
 }
 
 ###
@@ -36,13 +36,13 @@ PUT http://localhost:3333/logoff/
 
 ###
 
-PUT http://localhost:3333/login/
+PUT http://localhost:3333/login/f3419821-c710-4b7a-9788-eadbb55dda94
 Content-type: application/json
 
 {
-    "nm_login":""
+    "nm_login":"Yesus"
 }
 
 ###
 
-DELETE http://localhost:3333/login/
+DELETE http://localhost:3333/login/a60c1884-c41e-4cf0-ab60-7964c03fc9b0
