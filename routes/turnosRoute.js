@@ -17,9 +17,9 @@ export const turnosRoute = async(server)=>{
 
     server.get('/turno',async (req)=>{
     
-        const {search, cd_curso} = req.query
+        const {search, curso} = req.query
     
-        const turnos = await turno.list({search, cd_curso})
+        const turnos = await turno.list({search, cd_curso:curso})
     
         return turnos
     })

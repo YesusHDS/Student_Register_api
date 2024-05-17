@@ -17,9 +17,9 @@ export const ciclosRoute = async(server)=>{
 
     server.get('/ciclo',async (req)=>{
     
-        const {search, cd_curso} = req.query
+        const {search, curso} = req.query
     
-        const ciclos = await ciclo.list({search, cd_curso})
+        const ciclos = await ciclo.list({search, cd_curso:curso})
     
         return ciclos
     })
