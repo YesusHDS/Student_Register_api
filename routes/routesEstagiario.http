@@ -2,31 +2,45 @@ POST http://localhost:3333/estagiario
 Content-Type: application/json
 
 {
-    "cd_curso": "", 
-    "cd_registroMatricula": "", 
-    "dt_periodoComeco": "", 
-    "dt_periodoTermino": "", 
-    "nm_empresa": "", 
-    "nm_estagiario": ""
+    "cd_curso":"", 
+    "cd_registroMatricula":"", 
+    "nm_statusMatricula":"",
+    "nm_turno":"",
+    "nm_ciclo":"",
+    "dt_inicioEstagio":"",
+    "qt_horaEstagioEntrada":"",
+    "qt_horasEstagio":"",
+    "cd_empresa":"",
+    "ic_check": ,
+    "dt_periodoComeco":"", 
+    "dt_periodoTermino":"",
+    "nm_estagiario":""
 }
 
 ###
 
-GET http://localhost:3333/estagiario?search=&empresa=&RA=&curso=
+GET http://localhost:3333/estagiario?search=&empresa=&RA=&curso=&statusMatricula=&check=
 
 ###
 
-PUT http://localhost:3333/estagiario/
+PUT http://localhost:3333/estagiario/206378
 Content-Type: application/json
 
 {
-    "cd_curso": "", 
-    "dt_periodoComeco": "", 
-    "dt_periodoTermino": "", 
-    "nm_empresa": "", 
-    "nm_estagiario": ""
+    "cd_curso":"6fed0262-4b27-42d9-988f-1a1a5c80570d", 
+    "dt_periodoComeco":"01/01/2023", 
+    "dt_periodoTermino":"01/01/2024", 
+    "cd_empresa":"571d0bb3-5125-4a1b-b07f-7b23726ac735", 
+    "nm_estagiario":"Jennyfer",
+    "nm_statusMatricula":"",
+    "nm_turno":"",
+    "nm_ciclo":"",
+    "dt_inicioEstagio":"06/01/2023",
+    "qt_horaEstagioEntrada":"2",
+    "qt_horasEstagio":"8",
+    "ic_check":""
 }
 
 ###
 
-DELETE http://localhost:3333/estagiario/
+DELETE http://localhost:3333/estagiario/206378

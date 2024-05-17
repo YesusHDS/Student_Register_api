@@ -17,8 +17,7 @@ export const estagiariosRoute = async(server)=>{
             cd_empresa,
             ic_check,
             dt_periodoComeco, 
-            dt_periodoTermino, 
-            nm_empresa, 
+            dt_periodoTermino,
             nm_estagiario
         } = req.body
 
@@ -34,8 +33,7 @@ export const estagiariosRoute = async(server)=>{
             cd_empresa,
             ic_check,
             dt_periodoComeco, 
-            dt_periodoTermino, 
-            nm_empresa, 
+            dt_periodoTermino,
             nm_estagiario
         })
 
