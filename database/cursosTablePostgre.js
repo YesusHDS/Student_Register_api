@@ -18,6 +18,8 @@ export class cursosTablePostgre{
         await sql`
             insert into tb_cursos (cd_curso, nm_curso, nm_cicloEstagio) values (${id}, ${nm_curso}, ${nm_cicloEstagio})
         `
+
+        return id
     }
 
     async update(id, curso){

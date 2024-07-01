@@ -7,12 +7,12 @@ export const cursosRoute = async(server)=>{
     server.post('/curso', async(req,rep)=>{
         const {nm_curso, nm_cicloEstagio} = req.body
 
-        await curso.create({
+        const idCurso = await curso.create({
             nm_curso,
             nm_cicloEstagio
         })
 
-        return rep.status(201).send()
+        return idCurso
     })
 
     server.get('/curso',async (req)=>{
