@@ -6,7 +6,6 @@ export class ciclosTablePostgre{
         let ciclos = await sql`
             select cd_ciclo, cd_curso, nm_ciclo from tb_ciclos where nm_ciclo ilike ${'%'+search+'%'}
                 and cd_curso ilike ${'%'+cd_curso+'%'}
-                order by cd_ciclo
         `
 
         return ciclos
