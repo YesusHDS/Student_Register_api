@@ -14,17 +14,13 @@ export class estagiariosTablePostgre{
             qt_horasEstagio,
             cd_empresa,
             ic_check,
-            dt_periodoComeco, 
-            dt_periodoTermino,
             nm_estagiario
         } = estagiario
 
         await sql`
             insert into tb_estagiarios 
-            (cd_curso, cd_registroMatricula, dt_periodoComeco, 
-                dt_periodoTermino, nm_estagiario, nm_statusMatricula, nm_turno, nm_ciclo, dt_inicioEstagio, qt_horaEstagioEntrada, qt_horasEstagio, cd_empresa, ic_check) values
-                (${cd_curso}, ${cd_registroMatricula}, 
-                    ${dt_periodoComeco}, ${dt_periodoTermino}, ${nm_estagiario}, ${nm_statusMatricula}, ${nm_turno}, ${nm_ciclo}, ${dt_inicioEstagio}, ${qt_horaEstagioEntrada}, ${qt_horasEstagio}, ${cd_empresa}, ${ic_check})
+            (cd_curso, cd_registroMatricula, nm_estagiario, nm_statusMatricula, nm_turno, nm_ciclo, dt_inicioEstagio, qt_horaEstagioEntrada, qt_horasEstagio, cd_empresa, ic_check) values
+                (${cd_curso}, ${cd_registroMatricula}, ${nm_estagiario}, ${nm_statusMatricula}, ${nm_turno}, ${nm_ciclo}, ${dt_inicioEstagio}, ${qt_horaEstagioEntrada}, ${qt_horasEstagio}, ${cd_empresa}, ${ic_check})
         `
     }
 
@@ -34,7 +30,7 @@ export class estagiariosTablePostgre{
 
         if(check=='1'){
             estagiarios = await sql`
-                select e.cd_curso, cd_registroMatricula, dt_periodoComeco, dt_periodoTermino, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
+                select e.cd_curso, cd_registroMatricula, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
                     left join tb_cursos c on e.cd_curso = c.cd_curso
                     left join tb_empresas em on e.cd_empresa = em.cd_empresa
                     where nm_estagiario ilike ${'%'+search+'%'} 
@@ -45,7 +41,7 @@ export class estagiariosTablePostgre{
                     and e.ic_check = ${true}`
         } else if(check=='0'){
             estagiarios = await sql`
-            select e.cd_curso, cd_registroMatricula, dt_periodoComeco, dt_periodoTermino, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
+            select e.cd_curso, cd_registroMatricula, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
                 left join tb_cursos c on e.cd_curso = c.cd_curso
                 left join tb_empresas em on e.cd_empresa = em.cd_empresa
                 where nm_estagiario ilike ${'%'+search+'%'} 
@@ -57,7 +53,7 @@ export class estagiariosTablePostgre{
             `
         }else{
             estagiarios = await sql`
-            select e.cd_curso, cd_registroMatricula, dt_periodoComeco, dt_periodoTermino, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
+            select e.cd_curso, cd_registroMatricula, e.cd_empresa, em.nm_empresa, nm_estagiario, e.nm_turno, e.nm_ciclo, e.dt_inicioEstagio, e.qt_horaEstagioEntrada, e.qt_horasEstagio, e.ic_check, e.nm_statusMatricula from tb_estagiarios e
                 left join tb_cursos c on e.cd_curso = c.cd_curso
                 left join tb_empresas em on e.cd_empresa = em.cd_empresa
                 where nm_estagiario ilike ${'%'+search+'%'} 
@@ -74,9 +70,7 @@ export class estagiariosTablePostgre{
     async update(id, estagiario){
 
         const {
-            cd_curso, 
-            dt_periodoComeco, 
-            dt_periodoTermino, 
+            cd_curso,
             cd_empresa, 
             nm_estagiario,
             nm_statusMatricula,
@@ -90,9 +84,7 @@ export class estagiariosTablePostgre{
 
         await sql`
             update tb_estagiarios 
-                set cd_curso = ${cd_curso}, 
-                    dt_periodoComeco = ${dt_periodoComeco}, 
-                    dt_periodoTermino = ${dt_periodoTermino},
+                set cd_curso = ${cd_curso},
                     nm_estagiario = ${nm_estagiario},
                     cd_empresa = ${cd_empresa},
                     nm_statusMatricula = ${nm_statusMatricula},

@@ -12,8 +12,6 @@ sql`
         qt_horasEstagio int,
         nm_estagiario varchar(45) not null,
         cd_empresa text,
-        dt_periodoComeco date not null,
-        dt_periodoTermino date not null,
         ic_check boolean,
         constraint pk_estagiario primary key(cd_registroMatricula),
         constraint fk_curso_estagiario foreign key(cd_curso)

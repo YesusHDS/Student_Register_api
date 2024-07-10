@@ -16,8 +16,6 @@ export const estagiariosRoute = async(server)=>{
             qt_horasEstagio,
             cd_empresa,
             ic_check,
-            dt_periodoComeco, 
-            dt_periodoTermino,
             nm_estagiario
         } = req.body
 
@@ -32,8 +30,6 @@ export const estagiariosRoute = async(server)=>{
             qt_horasEstagio,
             cd_empresa,
             ic_check,
-            dt_periodoComeco, 
-            dt_periodoTermino,
             nm_estagiario
         })
 
@@ -53,9 +49,7 @@ export const estagiariosRoute = async(server)=>{
         const id = req.params.id
     
         const {
-            cd_curso, 
-            dt_periodoComeco, 
-            dt_periodoTermino, 
+            cd_curso,
             cd_empresa, 
             nm_estagiario,
             nm_statusMatricula,
@@ -67,9 +61,7 @@ export const estagiariosRoute = async(server)=>{
             ic_check} = req.body
     
         await estagiario.update(id, {
-            cd_curso, 
-            dt_periodoComeco, 
-            dt_periodoTermino, 
+            cd_curso,
             cd_empresa, 
             nm_estagiario,
             nm_statusMatricula,
